@@ -7,10 +7,12 @@ interface Props {
     title: string,
     completed: boolean,
 }
+
+/*This Component receive data for a single task as props and returns TSX for that */
 const Task: React.FC<Props> = ({id, userId, title, completed}) => {
 
-    const [taskStatus, setTaskStatus] = useState(completed)
-    const setTask = () => {
+    const [taskStatus, setTaskStatus] = useState(completed) //Intially, task status will completed/not-completed based on props
+    const setTask = () => { //Function to toggle Task status as completed or incomplete
         setTaskStatus(!taskStatus)
     }
     return (
